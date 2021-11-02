@@ -24,7 +24,13 @@ The model output a binary value (0 or 1) which predicts wheter or not the studen
 
 The retrained model uses the features above to train and predict quality students. The new model is able to achieve 98.63% accuracy in predicting the train data's output. This model outperforms the baseline model (with 51.85% accuracy) by incorporating 4 additional features to train the model. 
 
-Additional features are `Medu`, `Fedu`, `Studytime`, `Traveltime` which are important features to build high-quality students(add more justification)
+Additional features are `Medu`, `Fedu`, `Studytime`, `Traveltime` which are important features to build high-quality students
+
+The retrained model uses the features above to train and predict quality students. The new model is able to achieve 98.63% accuracy in predicting the train data's output. This model outperforms the baseline model (with 51.85% accuracy) by incorporating 4 additional features to train the model. 
+
+1. For the `Medu`, `Fedu`, we explored the dataset and found out that the higher those two features are, the higher G3 scores are, they have a high correlation. The explanation can be as the family is one of the vital parts to human's development in knowledge building and education process. the higher education that parents received, there might be more chances that the person will lead to a better performance in his/her education path.
+2. For the `Studytime`, we explored the dataset and found out that they have quite a high correlation. As more time a person spend his/her time on study, there might be more chances that he/she will have a deeper understanding about the knowledge.
+3. For the `Traveltime`,  we explored the dataset and found out that they have a relatively high correlation. As it might become a negetive influence, if someone needs to travel long time to school.
 
 ## Deploying the Microservice 
 
