@@ -12,7 +12,7 @@ To use the model, the query must contain the at least the following parameters:
 6. Studytime: weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours)
 7. Traveltime: home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour)
 
-To query the microservice, include the above parameters in the url. For example, http://localhost:5000/predict?age=18&&absences=6&&health=3&&Medu=4&&Fedu=4&&studytime=2&&traveltime=2. 
+To query the microservice, include the above parameters in the url. For example, `http://localhost:5000/predict?age=18&&absences=6&&health=3&&Medu=4&&Fedu=4&&studytime=2&&traveltime=2`.
 
 ## Model Output 
 
@@ -24,8 +24,13 @@ The retrained model uses the features above to train and predict quality student
 
 ## Deploying the Microservice 
 
-(add deployment instructions)
-
+Microservice is based on a flask app. To build the app the following steps should be followed:
+1. Clone repository
+2. Within `dockerfile` directory, run the following docker command `docker build -t ml:latest .`
+3. Upon successful build, call `docker run -d -p 5000:5000 ml` to create an instance of the flask application.
+4. If the instance is up and running, calling `curl http://localhost:5000` should return `try the predict route it is great!`
+5. The endpoint for the microservice is available at `http://localhost:5000/predict?`
+6. Args that must be passed to the endpoint are `age,absences,health,Medu,Fedu,studytime,traveltime`
 ## Testing 
 
 (add explanation and justification of the tests done)
