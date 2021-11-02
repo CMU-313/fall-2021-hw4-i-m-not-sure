@@ -37,4 +37,14 @@ Microservice is based on a flask app. To build the app the following steps shoul
 6. Args that must be passed to the endpoint are `age,absences,health,Medu,Fedu,studytime,traveltime`
 ## Testing 
 
-(add explanation and justification of the tests done)
+The test file using pytest can be found in `dockerfile/test_app.py`. To run the test, in `dockerfile` directory use the command `python3 -m pytest -v`.
+
+The tests include the following: 
+1. Sanity check that the site is up after deployment. This test checks that after starting the session we get a 200 response. 
+2. Empty arguments. Model cannot predict without any input. This test should check that an error is raised when empty argument is passed. 
+3. Not enough arguments. Since the model predicts the result based on 7 features, these must be provided to the model. If not enough arguments are given, the query should fail. 
+4. Test valid result. When given the features that model should predict to have a specific output (in this case 0), the response should reflect that. 
+5. Extra arguments. If the minimum 7 features are given, the model should be able to predict regardless of any extra arguments given and not raise an error. 
+6. Consistency test. To check that the application returns consistent result, given multiple queries with the same arguments, the result should be the same. 
+
+
