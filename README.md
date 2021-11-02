@@ -12,7 +12,9 @@ To use the model, the query must contain the at least the following parameters:
 6. Studytime: weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours)
 7. Traveltime: home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour)
 
-To query the microservice, include the above parameters in the url. For example, `http://localhost:5000/predict?age=18&&absences=6&&health=3&&Medu=4&&Fedu=4&&studytime=2&&traveltime=2`.
+To query the microservice, include the above parameters in the url with correct data type and range. 
+For example, http://localhost:5000/predict?age=18&&absences=6&&health=3&&Medu=4&&Fedu=4&&studytime=2&&traveltime=2. 
+
 
 ## Model Output 
 
@@ -20,7 +22,9 @@ The model output a binary value (0 or 1) which predicts wheter or not the studen
 
 ## Model Justification 
 
-The retrained model uses the features above to train and predict quality students. The new model is able to achieve 98.63% accuracy in predicting the train data's output. This model outperforms the baseline model (with 51.85% accuracy) by incorporating 4 additional features to train the model. (add more justification)
+The retrained model uses the features above to train and predict quality students. The new model is able to achieve 98.63% accuracy in predicting the train data's output. This model outperforms the baseline model (with 51.85% accuracy) by incorporating 4 additional features to train the model. 
+
+Additional features are Medu, Fedu, Studytime, Traveltime which are important features to build high-quality students(add more justification)
 
 ## Deploying the Microservice 
 

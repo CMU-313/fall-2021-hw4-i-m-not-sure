@@ -19,7 +19,6 @@ def predict():
      fedu = request.args.get('Fedu')
      studytime = request.args.get('studytime')
      traveltime = request.args.get('traveltime')
-     #data = [[age],[health],[absences]]
      query_df = pd.DataFrame({ 'health' : pd.Series(health) ,
                          'Medu' : pd.Series(medu) ,
                          'Fedu' : pd.Series(fedu),
