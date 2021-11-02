@@ -15,8 +15,18 @@ def predict():
      age = request.args.get('age')
      absences = request.args.get('absences')
      health = request.args.get('health')
-     data = [[age],[health],[absences]]
-     query_df = pd.DataFrame({ 'age' : pd.Series(age) ,'health' : pd.Series(health) ,'absences' : pd.Series(absences)})
+     medu = request.args.get('Medu')
+     fedu = request.args.get('Fedu')
+     studytime = request.args.get('studytime')
+     traveltime = request.args.get('traveltime')
+     #data = [[age],[health],[absences]]
+     query_df = pd.DataFrame({ 'health' : pd.Series(health) ,
+                         'Medu' : pd.Series(medu) ,
+                         'Fedu' : pd.Series(fedu),
+                         'studytime' : pd.Series(studytime) ,
+                         'traveltime' : pd.Series(traveltime) ,
+                         'absences' : pd.Series(absences), 
+                         'age' : pd.Series(age)})
      query = pd.get_dummies(query_df)
      prediction = clf.predict(query)
      return jsonify(np.asscalar(prediction))
