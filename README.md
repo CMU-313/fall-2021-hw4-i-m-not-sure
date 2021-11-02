@@ -37,7 +37,7 @@ Microservice is based on a flask app. To build the app the following steps shoul
 6. Args that must be passed to the endpoint are `age,absences,health,Medu,Fedu,studytime,traveltime`
 ## Testing 
 
-The test file using pytest can be found in dockerfile/test_app.py. To run the test, in dockerfile directory use python3 -m pytest -v.
+The test file using pytest can be found in `dockerfile/test_app.py`. To run the test, in `dockerfile` directory use the command `python3 -m pytest -v`.
 
 The tests include the following: 
 1. Sanity check that the site is up after deployment. This test checks that after starting the session we get a 200 response. 
