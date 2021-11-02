@@ -43,9 +43,8 @@ The tests include the following:
 1. Sanity check that the site is up after deployment. This test checks that after starting the session we get a 200 response. 
 2. Empty arguments. Model cannot predict without any input. This test should check that an error is raised when empty argument is passed. 
 3. Not enough arguments. Since the model predicts the result based on 7 features, these must be provided to the model. If not enough arguments are given, the query should fail. 
-4. Test result is 0. When given the features that model should predict to have 0 output, the response should reflect that. 
-5. Test result is 1. When given the features that model should predict to have 1 output, the response should reflect that.
-6. Extra arguments. If the minimum 7 features are given, the model should be able to predict regardless of any extra arguments given and not raise an error. 
-7. Consistency test. To check that the application returns consistent result, given multiple queries with the same arguments, the result should be the same. 
+4. Test valid result. When given the features that model should predict to have a specific output (in this case 0), the response should reflect that. 
+5. Extra arguments. If the minimum 7 features are given, the model should be able to predict regardless of any extra arguments given and not raise an error. 
+6. Consistency test. To check that the application returns consistent result, given multiple queries with the same arguments, the result should be the same. 
 
 
